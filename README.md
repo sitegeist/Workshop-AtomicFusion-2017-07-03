@@ -33,6 +33,8 @@ yarn run watch
 The following commands should get you a running local setup for develop. 
 
 ```
+git clone https://github.com/sitegeist/Workshop-AtomicFusion-2017-07-03 afx-workshop
+cd afx-workshop
 composer install
 ./flow doctrine:migrate
 ./flow site:import --package-key Sitegeist.Phoenix

@@ -1,0 +1,18 @@
+prototype(Sitegeist.Phoenix:Component.Atom.Image) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			src = 'https://dummyimage.com/600x400/000/fff'
+			title = 'image title'
+			alt = 'image alt'
+		}
+	}
+
+	alt = ''
+	src = ''
+	title = ''
+	class = false
+
+	renderer = afx`<img src={props.src} title={props.title} alt={props.alt} class={props.class} />`
+
+}

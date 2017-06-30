@@ -1,0 +1,13 @@
+prototype(Sitegeist.Phoenix:Document.MenuItems.Secondary) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:RawCollection {
+		@context.seondLevel = ${Array.first(Array.shift(Array.reverse(q(documentNode).add(q(documentNode).parents('[instanceof Neos.Neos:Document]')).get())))}
+		collection = ${seondLevel ? q(seondLevel).children('[instanceof Neos.Neos:Document]').get() : []}
+		itemName = "item"
+		itemRenderer = Neos.Fusion:RawArray {
+			href = Neos.Neos:NodeUri {
+				node = ${item}
+			}
+			title = ${q(item).property('title')}
+		}
+	}
+}

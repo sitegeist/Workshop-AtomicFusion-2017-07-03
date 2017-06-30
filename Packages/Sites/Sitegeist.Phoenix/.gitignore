@@ -1,0 +1,9 @@
+node_modules
+
+#
+# The following lines should be in here aswell
+# this is just o avoid issues during the workshop
+#
+
+#/Resources/Public/Styles
+#/Resources/Public/JavaScript

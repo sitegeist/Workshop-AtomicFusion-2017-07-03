@@ -1,0 +1,5 @@
+##
+# Declare the default headline abstract to use custom derived type
+#
+'Neos.NodeTypes:Headline':
+  abstract: TRUE

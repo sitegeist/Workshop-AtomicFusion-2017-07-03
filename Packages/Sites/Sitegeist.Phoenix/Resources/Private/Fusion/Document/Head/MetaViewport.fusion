@@ -1,0 +1,9 @@
+prototype(Sitegeist.Phoenix:Document.Head.MetaViewport) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:Tag {
+		tagName = 'meta'
+		attributes {
+			name = 'viewport'
+			content = ${Configuration.setting('Sitegeist.Monocle.preview.metaViewport')}
+		}
+	}
+}

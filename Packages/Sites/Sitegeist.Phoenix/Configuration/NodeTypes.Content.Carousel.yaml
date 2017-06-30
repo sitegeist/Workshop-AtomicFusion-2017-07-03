@@ -1,0 +1,29 @@
+##
+# A "Carousel" content element that renders "Image" child nodes into a JavaScript based slideshow
+#
+'Sitegeist.Phoenix:Content.Carousel':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+    'Sitegeist.Phoenix:Mixin.DisableAutomaticFusionGeneration': TRUE
+  ui:
+    label: 'Carousel'
+    group: 'plugins'
+    inspector:
+      groups:
+        'image':
+          label: i18n
+          icon: 'icon-film'
+          position: 50
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    help:
+      message: |
+        Bootstrap carousel which can display images
+  properties:
+    images:
+      type: 'array<Neos\Media\Domain\Model\Asset>'
+      ui:
+        label: 'Images'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'

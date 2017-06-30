@@ -1,0 +1,16 @@
+prototype(Sitegeist.Phoenix:Document.MenuItems.Language) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:RawCollection {
+		collection = ${Configuration.setting('Neos.ContentRepository.contentDimensions.language.presets')}
+		itemName = "languagePreset"
+		itemKey = "languageKey"
+		itemRenderer = Neos.Fusion:RawArray {
+			@context {
+				languageDocument = ${q(documentNode).context({'dimensions': {'language':  [languageKey]}, 'targetDimensions': {'language': languageKey}}).get(0)}
+			}
+			href = Neos.Neos:NodeUri {
+				node = ${languageDocument}
+			}
+			title = ${languagePreset.label}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+prototype(Sitegeist.Phoenix:Component.Atom.Headline) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			title = '<h1>This is a Headline</h1>'
+		}
+	}
+
+	title = ''
+
+	renderer = afx`
+		<div>
+			{props.title}
+		</div>
+	`
+
+}

@@ -1,0 +1,5 @@
+##
+# Declare the default forms abstract to use custom derived type
+#
+'Neos.NodeTypes:Form':
+  abstract: TRUE

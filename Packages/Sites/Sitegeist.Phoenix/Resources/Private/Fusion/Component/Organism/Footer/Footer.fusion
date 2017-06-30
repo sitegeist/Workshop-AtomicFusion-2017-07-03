@@ -1,0 +1,34 @@
+prototype(Sitegeist.Phoenix:Component.Organism.Footer) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			content = 'the footer content'
+			metaMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+		}
+	}
+
+	content = ''
+	metaMenuItems = ${[]}
+
+	renderer = afx`
+		<footer role="navigation" class="navbar navbar-default">
+			<div class="panel panel-default">
+				<div class="panel-body clearfix">
+					<div class="container">
+						<nav class="nav" role="navigation">
+							<Sitegeist.Phoenix:Component.Molecule.Navigation.Meta items={props.metaMenuItems} />
+						</nav>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="container">{props.content}</div>
+				</div>
+			</div>
+		</footer>
+	`
+}

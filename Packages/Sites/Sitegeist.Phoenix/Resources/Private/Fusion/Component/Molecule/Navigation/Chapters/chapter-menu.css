@@ -1,0 +1,22 @@
+.chapter-menu ul {
+	padding-left: 0;
+}
+
+.chapter-menu li {
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+
+.chapter-menu li:before,
+.chapter-menu li:after {
+    content: " ";
+    display: table;
+}
+
+.chapter-menu li:after {
+    clear: both;
+}
+
+.chapter-menu li img {
+	margin: 0 15px 10px 0;
+}

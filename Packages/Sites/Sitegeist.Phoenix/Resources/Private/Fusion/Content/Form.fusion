@@ -1,0 +1,3 @@
+prototype(Sitegeist.Phoenix:Content.Form) < prototype(Neos.Nodetypes:Form) {
+	presetName = 'bootstrap'
+}

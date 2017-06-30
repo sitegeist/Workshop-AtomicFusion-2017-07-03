@@ -1,0 +1,35 @@
+prototype(Sitegeist.Phoenix:Book.Chapter) < prototype(Neos.Neos:Page) {
+
+	head {
+		stylesheets.main = Sitegeist.Phoenix:Document.Head.Styles
+		javascripts.main = Sitegeist.Phoenix:Document.Head.Scripts
+		meta.viewport = Sitegeist.Phoenix:Document.Head.MetaViewport
+	}
+
+
+	body = Sitegeist.Phoenix:Component.Template.Chapter {
+
+		breadcrumbMenuItems =  Sitegeist.Phoenix:Document.MenuItems.Breadcrumb
+
+		siblingMenuItems = Sitegeist.Phoenix:Document.MenuItems.Siblings
+
+		chapterTitle = PackageFactory.AtomicFusion:Editable {
+			property = 'title'
+			block = false
+		}
+
+		chapterImageUri = Neos.Neos:ImageUri {
+			asset = ${q(documentNode).property('chapterImage')}
+			maximumWidth = 300
+			@if.image = ${q(node).property('chapterImage')}
+		}
+
+		content = Neos.Fusion:Array {
+			main = Neos.Neos:PrimaryContent {
+				nodePath = 'main'
+			}
+		}
+
+		@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+	}
+}

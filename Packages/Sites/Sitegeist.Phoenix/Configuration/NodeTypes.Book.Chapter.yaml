@@ -1,0 +1,67 @@
+
+##
+# A new Document NodeType "Chapter"
+#
+'Sitegeist.Phoenix:Book.Chapter':
+  superTypes:
+    'Sitegeist.Phoenix:Document.Page': TRUE
+    'Sitegeist.Phoenix:Mixin.Document.Restricted': TRUE
+  childNodes:
+    'main':
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: 'Chapter'
+    icon: 'icon-book'
+    help:
+      message: 'The Chapter node will work with all other chapter nodes on the same level to form a browsable book.'
+    inspector:
+      groups:
+        'document':
+          label: 'Document'
+  properties:
+    'chapterImage':
+      type: 'Neos\Media\Domain\Model\ImageInterface'
+      ui:
+        label: 'Chapter Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+        help:
+          message: 'This image will also appear in the chapter menu.'
+    'chapterDescription':
+      type: string
+      ui:
+        label: 'Chapter Description'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+        help:
+          message: 'Showrt description of the chapter'
+    title:
+      validation: ~
+      ui:
+        inlineEditable: TRUE
+        inspector:
+          group: ~
+        aloha:
+          placeholder: 'Enter title here'
+          'format':
+            'b': TRUE
+            'i': TRUE
+            'u': TRUE
+            'sub': TRUE
+            'sup': TRUE
+            'p': FALSE
+            'h1': FALSE
+            'h2': FALSE
+            'h3': FALSE
+            'pre': FALSE
+            'removeFormat': FALSE
+          'table': []
+          'list': []
+          'link':
+            'a': TRUE
+          'alignment': []
+          'formatlesspaste':
+            'button': FALSE
+            'formatlessPasteOption': TRUE

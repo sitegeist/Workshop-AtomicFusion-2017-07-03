@@ -1,0 +1,13 @@
+prototype(Sitegeist.Phoenix:Content.Columns.Two) < prototype(PackageFactory.AtomicFusion:Content) {
+
+    renderer = Sitegeist.Phoenix:Component.Molecule.Columns.Two {
+        layout = ${q(node).property('layout')}
+
+        column0 = Neos.Neos:PrimaryContent {
+            nodePath = 'column0'
+        }
+        column1 = Neos.Neos:PrimaryContent {
+            nodePath = 'column1'
+        }
+    }
+}

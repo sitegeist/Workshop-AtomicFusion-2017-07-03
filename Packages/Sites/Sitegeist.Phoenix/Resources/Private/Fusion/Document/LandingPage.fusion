@@ -1,0 +1,19 @@
+prototype(Sitegeist.Phoenix:Document.LandingPage) < prototype(Sitegeist.Phoenix:Document.Page) {
+
+	body = Sitegeist.Phoenix:Component.Template.LandingPage {
+
+		backgroundImageUri = Neos.Neos:ImageUri {
+			asset = ${q(documentNode).property('image')}
+			maximumWidth = 2560
+			maximumHeight = 1280
+			@if.image = ${q(node).property('image')}
+		}
+
+		teaser = Neos.Neos:PrimaryContent {
+			@if.has = ${q(documentNode).children('teaser').is()}
+			nodePath = 'teaser'
+		}
+
+
+	}
+}

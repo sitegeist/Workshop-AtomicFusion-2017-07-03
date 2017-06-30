@@ -1,0 +1,24 @@
+prototype(Sitegeist.Phoenix:Component.Molecule.Columns.Three) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			column0 = 'Lorem Ipsum Column 1'
+			column1 = 'Lorem Ipsum Column 2'
+			column2 = 'Lorem Ipsum Column 3'
+		}
+	}
+
+	layout = '4-4-4'
+	column0 = ''
+	column1 = ''
+	column2 = ''
+
+	renderer = afx`
+		<div class="columns" >
+			<div class={'column column--' + String.split(props.layout, '-')[0]} >{props.column0}</div>
+			<div class={'column column--' + String.split(props.layout, '-')[1]} >{props.column1}</div>
+			<div class={'column column--' + String.split(props.layout, '-')[2]} >{props.column2}</div>
+		</div>
+	`
+
+}

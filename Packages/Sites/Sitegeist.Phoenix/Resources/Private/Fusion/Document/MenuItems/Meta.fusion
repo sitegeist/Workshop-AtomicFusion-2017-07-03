@@ -1,0 +1,13 @@
+
+prototype(Sitegeist.Phoenix:Document.MenuItems.Meta) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:RawCollection {
+		collection = ${q(site).children('metamenu').children('[instanceof Neos.Neos:Document]').get()}
+		itemName = "item"
+		itemRenderer = Neos.Fusion:RawArray {
+			href = Neos.Neos:NodeUri {
+				node = ${item}
+			}
+			title = ${q(item).property('title')}
+		}
+	}
+}

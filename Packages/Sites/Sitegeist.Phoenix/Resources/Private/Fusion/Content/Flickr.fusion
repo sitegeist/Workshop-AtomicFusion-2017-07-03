@@ -1,0 +1,8 @@
+##
+# "Flickr" element, extending "Plugin"
+#
+prototype(Sitegeist.Phoenix:Content.Flickr) < prototype(Neos.Neos:Plugin) {
+	package = 'Sitegeist.Phoenix'
+	controller = 'Flickr'
+	action = 'tagStream'
+}

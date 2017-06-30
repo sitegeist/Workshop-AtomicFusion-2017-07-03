@@ -1,0 +1,12 @@
+include: Component/**/*.fusion
+include: Content/**/*.fusion
+include: Document/**/*.fusion
+include: Book/**/*.fusion
+
+root {
+	nodeType {
+		@position = 'after editPreviewMode'
+		condition = TRUE
+		type = ${node.nodeType.name}
+	}
+}

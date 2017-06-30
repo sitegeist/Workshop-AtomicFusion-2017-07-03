@@ -1,0 +1,17 @@
+#                                                                        #
+# Security policy for the Sitegeist.Phoenix package                      #
+#                                                                        #
+
+privilegeTargets:
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+
+    Neos_Demo_FlickrAccess:
+      matcher: method(Sitegeist\Phoenix\Controller\FlickrController->(tagStream|userStream)Action())
+
+roles:
+
+  'Neos.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: Neos_Demo_FlickrAccess
+        permission: GRANT

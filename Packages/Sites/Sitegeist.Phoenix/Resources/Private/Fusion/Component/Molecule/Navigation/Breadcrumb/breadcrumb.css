@@ -1,0 +1,9 @@
+.breadcrumb {
+	padding-left: 0;
+	color: var(--textSubtle);
+	background-color: transparent;
+}
+
+.breadcrumb li {
+	display: inline;
+}

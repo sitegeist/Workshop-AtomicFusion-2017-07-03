@@ -1,0 +1,39 @@
+prototype(Sitegeist.Phoenix:Component.Template.Chapter) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			content = 'Lorem Ipsum dolor ...'
+			chapterTitle = 'Chapter Title'
+			chapterImageUri = 'https://dummyimage.com/600x400/000/fff'
+
+			breadcrumbMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+
+			siblingMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Prev', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'current'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Next'}}
+			}
+		}
+	}
+
+	chapterTitle = ''
+	chapterImageUri = ''
+	content = ''
+	breadcrumbMenuItems = ${[]}
+	siblingMenuItems = ${[]}
+
+	renderer = afx`
+		<div class="container chapter-container">
+			<Sitegeist.Phoenix:Component.Molecule.Navigation.Breadcrumb items={props.breadcrumbMenuItems} />
+			<header><h1>{props.chapterTitle}</h1></header>
+			<Sitegeist.Phoenix:Component.Atom.Image class="pull-right" src={props.chapterImageUri} width="353" height="500" />
+			{props.content}
+			<Sitegeist.Phoenix:Component.Molecule.Navigation.Siblings items={props.siblingMenuItems} />
+		</div>
+	`
+}

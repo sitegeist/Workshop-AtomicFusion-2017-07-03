@@ -1,0 +1,101 @@
+blockquote + figcaption cite {
+	display: block;
+	font-size: inherit;
+	text-align: right;
+}
+
+body {
+	word-wrap: break-word;
+}
+
+pre code {
+	word-wrap: normal;
+}
+
+html {
+	font: normal 112.5% / 1.65 serif;
+}
+
+body {
+	hyphens: auto;
+	color: #444;
+}
+
+h1 {
+	font-size: 4em;
+	margin-bottom: 2.42424rem;
+}
+
+h2 {
+	font-size: 3.33333em;
+	margin-bottom: 2.0202rem;
+}
+
+h3 {
+	font-size: 2.66667em;
+	margin-bottom: 1.61616rem;
+}
+
+h4 {
+	font-size: 2em;
+	margin-bottom: 1.21212rem;
+}
+
+h5 {
+	font-size: 1.33333em;
+	margin-bottom: 0.80808rem;
+}
+
+h6 {
+	font-size: 1em;
+	margin-bottom: 0.60606rem;
+}
+
+p {
+	margin: auto auto 1.5rem;
+}
+
+p + p {
+	text-indent: 1.5rem;
+	margin-top: -1.5rem;
+}
+
+small {
+	font-size: 65%;
+}
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+	hyphens: none;
+}
+
+pre {
+	white-space: pre;
+}
+
+pre code {
+	white-space: pre-wrap;
+}
+
+code {
+	white-space: pre;
+	font-family: monospace;
+}
+
+abbr {
+	font-variant: small-caps;
+	font-weight: 600;
+	text-transform: lowercase;
+	color: gray;
+}
+
+abbr[title]:hover {
+	cursor: help;
+}

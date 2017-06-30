@@ -1,0 +1,40 @@
+prototype(Sitegeist.Phoenix:Book) < prototype(Sitegeist.Phoenix:Document.LandingPage) {
+	body {
+
+		content {
+			chapterMenu = Sitegeist.Phoenix:Component.Molecule.Navigation.Chapters {
+				@position = 'after main'
+
+				items = Neos.Fusion:RawCollection {
+					collection = ${q(documentNode).children('[instanceof Sitegeist.Phoenix:Book.Chapter]').get()}
+					itemName = "item"
+					itemRenderer = Neos.Fusion:RawArray {
+						href = Neos.Neos:NodeUri {
+							node = ${item}
+							@if.notCurrent = ${documentNode != item ? true : false}
+						}
+						title = ${q(item).property('title')}
+						description = ${q(item).property('chapterDescription')}
+						imageSrc = Neos.Fusion:Case {
+							hasAsset {
+								condition = ${q(item).property('chapterImage') ? true : false}
+								renderer = Neos.Neos:ImageUri {
+									asset = ${q(item).property('chapterImage')}
+									maximumWidth = 100
+								}
+							}
+
+							fallback {
+								condition = true
+								renderer = Neos.Fusion:ResouceUri {
+									path = 'resource://Neos.Neos/Public/Images/dummy-image.png'
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}

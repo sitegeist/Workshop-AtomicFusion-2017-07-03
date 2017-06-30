@@ -1,0 +1,9 @@
+##
+# A mixin for a restricted document
+# This mixin remove the automatic generation of fusion prototypes for nodetypes
+#
+'Sitegeist.Phoenix:Mixin.DisableAutomaticFusionGeneration':
+  abstract: true
+  options:
+    fusion:
+      prototypeGenerator: ~

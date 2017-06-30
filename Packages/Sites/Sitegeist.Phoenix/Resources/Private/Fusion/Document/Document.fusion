@@ -1,0 +1,31 @@
+prototype(Sitegeist.Phoenix:Document) < prototype(Neos.Neos:Page) {
+
+	head {
+		stylesheets.main = Sitegeist.Phoenix:Document.Head.Styles
+		meta.viewport = Sitegeist.Phoenix:Document.Head.MetaViewport
+	}
+
+	body = Sitegeist.Phoenix:Component.Template.Page {
+
+		header = Sitegeist.Phoenix:Component.Organism.Header {
+			mainMenuItems = Sitegeist.Phoenix:Document.MenuItems.Main
+			secondaryMenuItems = Sitegeist.Phoenix:Document.MenuItems.Secondary
+			breadcrumbMenuItems = Sitegeist.Phoenix:Document.MenuItems.Breadcrumb
+			languageTitle = ${Configuration.setting('Neos.ContentRepository.contentDimensions.language.presets.' + documentNode.dimensions.language[0] + '.label')}
+			languageMenuItems = Sitegeist.Phoenix:Document.MenuItems.Language
+		}
+
+		footer = Sitegeist.Phoenix:Component.Organism.Footer {
+			content = Neos.Neos:ContentCollection {
+				nodePath = ${q(site).children('footer').property('_path')}
+				collection = ${q(site).children('footer').children()}
+			}
+			metaMenuItems = Sitegeist.Phoenix:Document.MenuItems.Meta
+		}
+
+	}
+
+	javaScripts = Sitegeist.Phoenix:Document.Head.Scripts {
+		@position = 'before closingBodyTag'
+	}
+}

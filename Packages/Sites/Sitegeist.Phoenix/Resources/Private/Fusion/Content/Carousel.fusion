@@ -1,0 +1,18 @@
+##
+# "Carousel" element
+#
+prototype(Sitegeist.Phoenix:Content.Carousel)  < prototype(PackageFactory.AtomicFusion:Content) {
+
+	renderer = Sitegeist.Phoenix:Component.Molecule.Carousel {
+		identifier = ${node.identifier}
+		items = Neos.Fusion:RawCollection {
+			collection = ${q(node).property('images') ? q(node).property('images')  : []}
+			itemName = "image"
+			itemRenderer = Neos.Fusion:RawArray {
+				src = Neos.Neos:ImageUri {
+					asset = ${image}
+				}
+			}
+		}
+	}
+}

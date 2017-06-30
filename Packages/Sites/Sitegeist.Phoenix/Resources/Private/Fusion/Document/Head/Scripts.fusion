@@ -1,0 +1,14 @@
+prototype(Sitegeist.Phoenix:Document.Head.Scripts) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:Collection {
+		collection = ${Configuration.setting('Sitegeist.Monocle.preview.additionalResources.javaScripts')}
+		itemName = 'javascript'
+		itemRenderer = Neos.Fusion:Tag {
+			tagName = 'script'
+			attributes.src = Neos.Fusion:ResourceUri {
+				path = ${javascript}
+				@process.addCacheBuster = ${value + '?cb=' + SitegeistKlarSchiffCacheBuster.get()}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,30 @@
+prototype(Sitegeist.Phoenix:Component.Atom.YouTube) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			video = 'zeIXfdogJbA'
+			width = 520
+			height = 350
+		}
+	}
+
+	width = false
+	height = false
+	video = false
+
+	renderer = afx`
+		<div class='responsive-video'>
+			<figure @if.hasVideo={props.video ? true : false} class="video" >
+				<iframe
+					src={'https://www.youtube.com/embed/' + props.video + '?wmode=transparent'}
+					width={props.width ? props.width : false}
+					height={props.height ? props.width : false}
+					frameborder="0"
+					allowfullscreen
+				></iframe>
+			</figure>
+			<p @if.hasNoVideo={props.video ? false : true}>Please specify video ID</p>
+		</div>
+	`
+
+}

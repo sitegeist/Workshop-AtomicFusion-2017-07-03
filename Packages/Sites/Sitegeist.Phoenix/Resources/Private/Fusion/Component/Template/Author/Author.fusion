@@ -1,0 +1,50 @@
+prototype(Sitegeist.Phoenix:Component.Template.Author) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			imageUri = 'https://dummyimage.com/600x400/000/fff'
+			name = 'Author Name'
+			description = 'Lorem Ipsum dolor ...'
+
+			books = Neos.Fusion:RawArray {
+				0 = ${{titleImage:'https://dummyimage.com/70x100/000' , title:'Book Title', description:'book description', isbn:'978-3866476943' }}
+				1 = ${{titleImage:'https://dummyimage.com/70x100/aaa' , title:'Book Title', description:'book description', isbn:'978-3866476943'}}
+				2 = ${{titleImage:'https://dummyimage.com/70x100/ccc' , title:'Book Title', description:'book description', isbn:'978-3866476943'}}
+			}
+
+		}
+	}
+
+	imageUri = ''
+	name = ''
+	description = ''
+	books = ${[]}
+
+	renderer = afx`
+		<div class="author author-container">
+			<Sitegeist.Phoenix:Component.Molecule.Navigation.Breadcrumb items={props.breadcrumbMenuItems} />
+
+			<Sitegeist.Phoenix:Component.Atom.Image class="pull-right" src={props.imageUri} width="353" height="500" />
+
+			<header>
+				<h1>{props.name}</h1>
+			</header>
+
+			{props.content}
+
+			<div @if.has={props.books ? true : false}>
+				<ul>
+					<Neos.Fusion:Collection collection={props.books} itemName="book" @children="itemRenderer">
+						<li>
+							<Sitegeist.Phoenix:Component.Atom.Image src={book.titleImage} title={book.title} />
+							<h6>{book.title}</h6>
+							<p>{book.description}</p>
+							<p><a href={'https://www.amazon.de/s/?field-keywords=' + book.isbn}></a></p>
+						</li>
+					</Neos.Fusion:Collection>
+
+				</ul>
+			</div>
+		</div>
+	`
+}

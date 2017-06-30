@@ -1,0 +1,16 @@
+.flickr-stream ul {
+	padding-left: 0;
+}
+
+.flickr-stream li {
+	list-style-type: none;
+	width: 240px;
+	margin: 0 10px 10px;
+	text-align: center;
+}
+
+.flickr-stream img {
+	margin-bottom: 10px;
+	max-height: 190px;
+	max-width: 250px;
+}

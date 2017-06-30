@@ -1,0 +1,9 @@
+prototype(Sitegeist.Phoenix:Document.Page) < prototype(Sitegeist.Phoenix:Document) {
+	body = Sitegeist.Phoenix:Component.Template.Page {
+		content = Neos.Fusion:Array {
+			main = Neos.Neos:PrimaryContent {
+				nodePath = 'main'
+			}
+		}
+	}
+}

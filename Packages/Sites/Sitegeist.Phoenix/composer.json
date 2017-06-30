@@ -1,0 +1,22 @@
+{
+  "description": "",
+  "type": "neos-site",
+  "name": "sitegeist/phoenix",
+  "require": {
+    "neos/neos": "*",
+    "neos/nodetypes": "*",
+    "packagefactory/atomicfusion": "*",
+    "packagefactory/atomicfusion-afx": "*",
+    "sitegeist/monocle": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sitegeist\\Phoenix\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "Sitegeist.Phoenix"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+##
+# A mixin for a restricted document
+# Those documents are not allowed on default pages and have to be specifically allowed in the constraints of
+# their parent nodes
+#
+'Sitegeist.Phoenix:Mixin.Document.Restricted':
+  abstract: true

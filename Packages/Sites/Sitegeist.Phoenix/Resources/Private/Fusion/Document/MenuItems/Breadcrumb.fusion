@@ -1,0 +1,12 @@
+prototype(Sitegeist.Phoenix:Document.MenuItems.Breadcrumb) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:RawCollection {
+		collection = ${Array.reverse(q(documentNode).add(q(documentNode).parents('[instanceof Neos.Neos:Document]')).get())}
+		itemName = "item"
+		itemRenderer = Neos.Fusion:RawArray {
+			href = Neos.Neos:NodeUri {
+				node = ${item}
+			}
+			title = ${q(item).property('title')}
+		}
+	}
+}

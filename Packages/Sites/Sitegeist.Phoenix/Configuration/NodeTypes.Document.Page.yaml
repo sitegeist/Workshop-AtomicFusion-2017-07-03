@@ -1,0 +1,16 @@
+##
+# Adjust the "Page" node type:
+# Add restrictions for child-nodes
+#
+'Sitegeist.Phoenix:Document.Page':
+  ui:
+    label: 'Page'
+    icon: 'icon-file'
+
+  superTypes:
+    'Neos.NodeTypes:Page': TRUE
+    'Sitegeist.Phoenix:Mixin.DisableAutomaticFusionGeneration': TRUE
+
+  constraints:
+    nodeTypes:
+      'Sitegeist.Phoenix:Mixin.Document.Restricted': FALSE

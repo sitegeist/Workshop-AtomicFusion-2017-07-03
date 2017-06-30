@@ -1,0 +1,26 @@
+prototype(Sitegeist.Phoenix:Component.Molecule.Navigation) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			items = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+		}
+	}
+
+	items = ${[]}
+	class = 'nav'
+
+	renderer = afx`
+		<ul class={props.class} >
+			<Neos.Fusion:Collection collection={props.items} itemName="item" @children="itemRenderer">
+				<li class={item.class ? item.class : 'normal'}>
+					<Neos.Fusion:Tag tagName={item.href ? 'a' : 'span'} attributes.href={item.href ? item.href : false} >{item.title}</Neos.Fusion:Tag>
+				</li>
+			</Neos.Fusion:Collection>
+		</ul>
+	`
+}

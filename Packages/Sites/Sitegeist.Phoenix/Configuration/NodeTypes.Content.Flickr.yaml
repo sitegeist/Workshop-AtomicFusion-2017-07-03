@@ -1,0 +1,32 @@
+##
+# A simple "Flickr" plugin that demonstrates the "PluginViews"-feature
+#
+'Sitegeist.Phoenix:Content.Flickr':
+  superTypes:
+    'Neos.Neos:Plugin': TRUE
+    'Sitegeist.Phoenix:Mixin.DisableAutomaticFusionGeneration': TRUE
+  ui:
+    label: 'Flickr'
+    icon: 'icon-flickr'
+    inspector:
+      groups:
+        'feed':
+          label: 'Feed'
+          icon: 'icon-rss'
+    help:
+      message: 'Displays a gallery of images from a flickr stream based on tags.'
+  options:
+    'pluginViews':
+      'UserFeed':
+        label: 'Sitegeist.Phoenix:NodeTypes.Flickr:options.pluginViews.userFeed'
+        controllerActions:
+          'Sitegeist\Phoenix\Controller\FlickrController': ['userStream']
+  properties:
+    'tags':
+      type: string
+      defaultValue: ''
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'feed'

@@ -1,0 +1,75 @@
+prototype(Sitegeist.Phoenix:Component.Organism.Header) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			content = 'the footer content'
+
+			languageTitle = 'English (US)'
+
+			languageMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+
+			mainMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+
+			secondaryMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+		}
+	}
+
+	languageTitle = ''
+	languageMenuItems =  ${[]}
+	mainMenuItems =  ${[]}
+	secondaryMenuItems =  ${[]}
+
+	renderer = afx`
+		<div class="top-navigation-wrap navbar-fixed-top" data-component="Organism/Header">
+			<div class="container">
+
+				<div class="language-menu">
+					<div>
+						<span class="language-menu-full">{props.languageTitle}</span><span class="language-menu-short" title={props.languageTitle}></span>
+						<span>▼</span>
+					</div>
+					<Sitegeist.Phoenix:Component.Molecule.Navigation items={props.languageMenuItems} class=""/>
+				</div>
+
+				<nav class="navbar navbar-static-top navbar-default first-level-navigation" role="navigation">
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<a href="/">
+							<Sitegeist.Phoenix:Component.Atom.Logo />
+						</a>
+					</div>
+
+					<div class="collapse navbar-collapse navbar-main-collapse">
+						<Sitegeist.Phoenix:Component.Molecule.Navigation.Main items={props.mainMenuItems} />
+					</div>
+				</nav>
+				<nav class="navbar second-level-navigation" role="navigation" @if.1={Array.length(props.secondaryMenuItems) > 0}>
+					<Sitegeist.Phoenix:Component.Molecule.Navigation.Secondary items={props.secondaryMenuItems}/>
+				</nav>
+			</div>
+		</div>
+
+	`
+}

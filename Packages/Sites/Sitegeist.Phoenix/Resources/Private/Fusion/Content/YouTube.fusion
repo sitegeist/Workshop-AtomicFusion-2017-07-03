@@ -1,0 +1,12 @@
+##
+# "YouTube" element
+#
+prototype(Sitegeist.Phoenix:Content.YouTube) < prototype(PackageFactory.AtomicFusion:Content) {
+
+	renderer = Sitegeist.Phoenix:Component.Atom.YouTube {
+		video = ${q(node).property('video')}
+		width = ${q(node).property('width')}
+		height = ${q(node).property('height')}
+	}
+
+}

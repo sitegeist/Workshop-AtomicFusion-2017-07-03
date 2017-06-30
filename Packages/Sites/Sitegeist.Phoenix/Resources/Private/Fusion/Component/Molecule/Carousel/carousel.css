@@ -1,0 +1,46 @@
+.carousel {
+	margin-bottom: 1.5em;
+}
+
+.carousel-indicators {
+	bottom: 0;
+}
+
+.carousel-indicators li {
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	border-color: #ccc;
+	background-color: #888;
+	transition: box-shadow .1s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.carousel-indicators .active {
+	width: 16px;
+	height: 16px;
+	background-color: var(--brandColorPrimary);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+
+@media map(media, screen-sm) {
+	.carousel-indicators {
+		display: none;
+	}
+}
+
+.carousel-control.right,
+.carousel-control.left {
+	background: none;
+}
+
+.neos-backend .carousel-control {
+	display: none;
+}
+
+@media map(media, screen-sm) {
+	.carousel-caption {
+		font-size: 15px;
+		padding-bottom: 0;
+	}
+}

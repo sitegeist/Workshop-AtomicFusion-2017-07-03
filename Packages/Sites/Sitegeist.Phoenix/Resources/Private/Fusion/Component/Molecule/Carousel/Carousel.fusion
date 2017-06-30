@@ -1,0 +1,48 @@
+prototype(Sitegeist.Phoenix:Component.Molecule.Carousel) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			identifier = 'carousel'
+			items = Neos.Fusion:RawArray {
+				0 = ${{src:'https://dummyimage.com/600x400/000' , title:'Title 1', alt:"Alt 1"}}
+				1 = ${{src:'https://dummyimage.com/600x400/aaa' , title:'Title 2', alt:"Alt 2"}}
+				2 = ${{src:'https://dummyimage.com/600x400/ccc' , title:'Title 3', alt:"Alt 3"}}
+				3 = ${{src:'https://dummyimage.com/600x400/333' , title:'Title 4', alt:"Alt 4"}}
+			}
+		}
+	}
+
+	identifier = ''
+	items = ${[]}
+
+	renderer = afx`
+		<div class="neos-demo-carousel">
+			<div class="carousel slide" id={'carousel_' + props.identifier} data-ride="carousel">
+				<ol class="carousel-indicators">
+					<Neos.Fusion:Collection collection={props.items} itemName="item" @children="itemRenderer" iterationName="itemIterator">
+					<li data-target={'#carousel_' + props.identifier} data-slide-to={itemIterator.index} class={itemIterator.isFirst ? 'active' : false}></li>
+					</Neos.Fusion:Collection>
+				</ol>
+
+				<div class="carousel-inner">
+					<Neos.Fusion:Collection collection={props.items} itemName="item" @children="itemRenderer" iterationName="itemIterator">
+							<div class={itemIterator.isFirst ? 'item active' : 'item'}>
+								<Sitegeist.Phoenix:Component.Atom.Image src={item.src} title={item.title} alt={item.alt} />
+								<div class="carousel-caption" @if.has={item.title ? true : false}>
+									{item.title}
+								</div>
+							</div>
+					</Neos.Fusion:Collection>
+				</div>
+
+				<a class="left carousel-control" href={'#carousel_' + props.identifier} data-slide="prev">
+					<span class="icon-prev"></span>
+				</a>
+				<a class="right carousel-control" href={'#carousel_' + props.identifier} data-slide="next">
+					<span class="icon-next"></span>
+				</a>
+			</div>
+		</div>
+	`
+
+}

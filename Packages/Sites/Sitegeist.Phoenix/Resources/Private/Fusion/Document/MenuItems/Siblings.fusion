@@ -1,0 +1,13 @@
+prototype(Sitegeist.Phoenix:Document.MenuItems.Siblings) < prototype(Neos.Fusion:Value) {
+	value = Neos.Fusion:RawCollection {
+		collection = ${q(documentNode).prev('[instanceof Neos.Neos:Document]').add(documentNode).add(q(documentNode).next('[instanceof Neos.Neos:Document]')).get()}
+		itemName = "item"
+		itemRenderer = Neos.Fusion:RawArray {
+			href = Neos.Neos:NodeUri {
+				node = ${item}
+				@if.notCurrent = ${documentNode != item ? true : false}
+			}
+			title = ${q(item).property('title')}
+		}
+	}
+}

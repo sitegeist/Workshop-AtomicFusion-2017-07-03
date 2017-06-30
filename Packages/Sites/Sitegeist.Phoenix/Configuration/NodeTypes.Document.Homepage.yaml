@@ -1,0 +1,25 @@
+##
+# Special homepage nodetype that declares a footer child node for usage as shared footer.
+#
+'Sitegeist.Phoenix:Document.Homepage':
+  ui:
+    label: 'Homepage'
+    icon: 'icon-globe'
+    help:
+      message: 'The homepage type is to be used only once and adds the shared footer.'
+  superTypes:
+    'Sitegeist.Phoenix:Document.LandingPage': TRUE
+    'Sitegeist.Phoenix:Mixin.Document.Restricted': TRUE
+  childNodes:
+    'footer':
+      position: 'end'
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Sitegeist.Phoenix:Content.Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+  constraints:
+    nodeTypes:
+      'Sitegeist.Phoenix:Book': TRUE

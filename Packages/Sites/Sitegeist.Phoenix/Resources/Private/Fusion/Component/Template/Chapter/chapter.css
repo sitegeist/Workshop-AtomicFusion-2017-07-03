@@ -1,0 +1,54 @@
+.chapter {
+	padding-top: 20px;
+	background-color: #fafafa;
+}
+
+.chapter-container {
+	max-width: 640px;
+	font-size: 1.3em;
+	text-align: justify;
+}
+
+.chapter-container p:first-of-type::first-letter {
+	float: left;
+	margin: 0 10px 2px 0;
+	padding: inherit;
+	font-size: 4em;
+	font-family: Times;
+	line-height: 1;
+	text-indent: 0;
+	background: transparent;
+	color: var(--brandColorPrimary);
+}
+
+.chapter-container p {
+	margin-bottom: 2em;
+}
+
+.chapter-container img {
+	max-width: 250px;
+	height: auto;
+	margin: 0 0 0.5em 0.8em;
+}
+
+@media map(media, screen-sm) {
+	.chapter-container img {
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.chapter-pager {
+	padding-left: 0;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.chapter-pager li {
+	list-style-type: none;
+	display: inline;
+}

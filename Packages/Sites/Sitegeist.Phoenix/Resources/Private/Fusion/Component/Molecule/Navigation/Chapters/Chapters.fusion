@@ -1,0 +1,32 @@
+prototype(Sitegeist.Phoenix:Component.Molecule.Navigation.Chapters) < prototype(PackageFactory.AtomicFusion:Component) {
+
+
+	@styleguide {
+		props {
+			items = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/100x100/000', title:'Title 1', imageSrc:'https://dummyimage.com/100x100/000', description:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'}}
+				1 = ${{href:'https://dummyimage.com/100x100/aaa', title:'Title 2', imageSrc:'https://dummyimage.com/100x100/aaa', description:''}}
+				2 = ${{href:'https://dummyimage.com/100x100/ccc', title:'Title 3', imageSrc:'https://dummyimage.com/100x100/ccc', description:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam'}}
+				3 = ${{href:'https://dummyimage.com/100x100/333', title:'Title 4', imageSrc:'https://dummyimage.com/100x100/333', description:''}}
+			}
+		}
+	}
+
+	items = ${[]}
+
+	renderer = afx`
+		<ul class="chapter-menu" >
+			<Neos.Fusion:Collection collection={props.items} itemName="item" @children="itemRenderer">
+				<li>
+					<img src={item.imageSrc} class="img-responsive pull-left" alt={item.title} title={item.title} />
+					<Neos.Fusion:Tag tagName={item.href ? 'a' : 'span'} attributes.href={item.href ? item.href : false} >{item.title}</Neos.Fusion:Tag>
+					<p class="text-muted" @if.has={item.description ? true : false} >
+						{item.description}
+					</p>
+					<Sitegeist.Phoenix:Component.Molecule.Navigation.Chapters items={item.children} @if.has={item.children ? true : false} />
+				</li>
+			</Neos.Fusion:Collection>
+		</ul>
+	`
+
+}

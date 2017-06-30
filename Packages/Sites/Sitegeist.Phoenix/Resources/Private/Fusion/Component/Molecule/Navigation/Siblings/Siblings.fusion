@@ -1,0 +1,18 @@
+prototype(Sitegeist.Phoenix:Component.Molecule.Navigation.Siblings) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			items = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Prev Title 1'}}
+				1 = ${{href: null , title:'Title 2', class:'current'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Next Title 3'}}
+			}
+		}
+	}
+
+	items = ${[]}
+
+	renderer = afx`
+		<Sitegeist.Phoenix:Component.Molecule.Navigation items={props.items} class="chapter-pager" />
+	`
+}

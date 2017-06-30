@@ -1,0 +1,148 @@
+
+Sitegeist:
+  Phoenix:
+    flickr:
+      tagStreamUriPattern: 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=%s'
+      userStreamUriPattern: 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&id=%s'
+
+  Monocle:
+    preview:
+      defaultPath: 'Component.Template.Page'
+      metaViewport: 'width=device-width, initial-scale=1.0'
+      additionalResources:
+        styleSheets:
+          bootstrap: 'resource://Neos.Twitter.Bootstrap/Public/3/css/bootstrap.min.css'
+          main: 'resource://Sitegeist.Phoenix/Public/Styles/main.css'
+        javaScripts:
+          jquery : 'resource://Neos.Twitter.Bootstrap/Public/Libraries/jQuery/jquery-1.10.1.min.js'
+          bootstrap: 'resource://Neos.Twitter.Bootstrap/Public/3/js/bootstrap.min.js'
+          main: 'resource://Sitegeist.Phoenix/Public/JavaScript/main.min.js'
+
+Neos:
+  Neos:
+    userInterface:
+      editPreviewModes:
+        print:
+          isEditingMode: false
+          isPreviewMode: true
+          fusionRenderingPath: print
+          title: 'Sitegeist.Phoenix:Main:editPreviewModes.print'
+          position: 200
+      translation:
+        autoInclude:
+          Sitegeist.Phoenix:
+            - Main
+            - 'NodeTypes/*'
+            - 'NodeTypes/Content/*'
+            - 'NodeTypes/Document/*'
+  ContentRepository:
+    contentDimensions:
+      language:
+        label: 'Sitegeist.Phoenix:Main:contentDimensions.language'
+        icon: icon-language
+        default: en_US
+        defaultPreset: en_US
+        presets:
+          all: null
+          en_US:
+            label: 'English (US)'
+            values:
+              - en_US
+            uriSegment: en
+          en_UK:
+            label: 'English (UK)'
+            values:
+              - en_UK
+              - en_US
+            uriSegment: uk
+          de:
+            label: German
+            values:
+              - de
+            uriSegment: de
+          fr:
+            label: French
+            values:
+              - fr
+            uriSegment: fr
+          nl:
+            label: Dutch
+            values:
+              - nl
+              - de
+            uriSegment: nl
+          da:
+            label: Danish
+            values:
+              - da
+            uriSegment: da
+          lv:
+            label: Latvian
+            values:
+              - lv
+            uriSegment: lv
+
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://Sitegeist.Phoenix/Private/Form/'
+    presets:
+      bootstrap:
+        title: 'Twitter bootstrap'
+        parentPreset: default
+        formElementTypes:
+          'Neos.Form:Base':
+            renderingOptions:
+              layoutPathPattern: 'resource://Sitegeist.Phoenix/Private/Templates/ContactForm/{@type}.html'
+          'Neos.Form:FormElement':
+            properties:
+              elementClassAttribute: form-control
+          'Neos.Form:MultiLineText':
+            properties:
+              elementClassAttribute: form-control
+
+  ContentRepository:
+    contentDimensions:
+      language:
+        label: 'Language'
+        icon: icon-language
+        default: en_US
+        defaultPreset: en_US
+        presets:
+          all: null
+          en_US:
+            label: 'English (US)'
+            values:
+              - en_US
+            uriSegment: en
+          en_UK:
+            label: 'English (UK)'
+            values:
+              - en_UK
+              - en_US
+            uriSegment: uk
+          de:
+            label: German
+            values:
+              - de
+            uriSegment: de
+          fr:
+            label: French
+            values:
+              - fr
+            uriSegment: fr
+          nl:
+            label: Dutch
+            values:
+              - nl
+              - de
+            uriSegment: nl
+          da:
+            label: Danish
+            values:
+              - da
+            uriSegment: da
+          lv:
+            label: Latvian
+            values:
+              - lv
+            uriSegment: lv

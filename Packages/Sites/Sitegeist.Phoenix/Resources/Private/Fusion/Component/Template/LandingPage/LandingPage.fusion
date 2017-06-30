@@ -1,0 +1,39 @@
+prototype(Sitegeist.Phoenix:Component.Template.LandingPage) < prototype(PackageFactory.AtomicFusion:Component) {
+
+	@styleguide {
+		props {
+			header = Sitegeist.Phoenix:Component.Organism.Header
+			footer = Sitegeist.Phoenix:Component.Organism.Footer
+			content = 'Lorem Ipsum'
+
+			breadcrumbMenuItems = Neos.Fusion:RawArray {
+				0 = ${{href:'https://dummyimage.com/600x400/000' , title:'Title 1', class:'current'}}
+				1 = ${{href:'https://dummyimage.com/600x400/aaa' , title:'Title 2'}}
+				2 = ${{href:'https://dummyimage.com/600x400/ccc' , title:'Title 3'}}
+				3 = ${{href:'https://dummyimage.com/600x400/333' , title:'Title 4'}}
+			}
+		}
+	}
+
+	content = ''
+	teaser = ''
+	backgroundImageUri = ''
+	header = ''
+	footer = ''
+	breadcrumbMenuItems = ${[]}
+
+	renderer = afx`
+		{props.header}
+		<div
+			class={'main-header' + (props.backgroundImageUri ? ' image' : '')}
+			style={props.backgroundImageUri ? 'background-image: url(' + props.backgroundImageUri + ');' : false}
+		>
+			<div class="container" @if.has={props.teaser ? true : false} >{props.teaser}</div>
+		</div>
+		<div class="container" @if.has={props.content ? true : false} >
+			<Sitegeist.Phoenix:Component.Molecule.Navigation.Breadcrumb @if.noLandingPage={props.landingPage ? false : true} items={props.breadcrumbMenuItems} />
+			{props.content}
+		</div>
+		{props.footer}
+	`
+}

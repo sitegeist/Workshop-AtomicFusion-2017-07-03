@@ -1,0 +1,20 @@
+
+##
+# A new Document NodeType "Book"
+#
+'Sitegeist.Phoenix:Book':
+  superTypes:
+    'Sitegeist.Phoenix:Document.LandingPage': TRUE
+    'Sitegeist.Phoenix:Mixin.Document.Restricted': TRUE
+  ui:
+    label: 'Book'
+    icon: 'icon-book'
+    help:
+      message: 'The Book node will work with chapter nodes below to form a browsable book.'
+    inspector:
+      groups:
+        'document':
+          label: i18n
+  constraints:
+    nodeTypes:
+      'Sitegeist.Phoenix:Book.Chapter': TRUE

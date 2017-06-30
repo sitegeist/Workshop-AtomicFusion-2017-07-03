@@ -1,0 +1,18 @@
+
+##
+# Adjust the "Form" node type:
+# Remove the empty select option and register the "contact-form"-Form
+#
+'Sitegeist.Phoenix:Content.Form':
+  superTypes:
+    'Neos.NodeTypes:Form': TRUE
+    'Sitegeist.Phoenix:Mixin.DisableAutomaticFusionGeneration': TRUE
+  properties:
+    'formIdentifier':
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '': ~
+              'contact-form':
+                label: 'Sitegeist.Phoenix:NodeTypes.Form:properties.formIdentifier.selectBoxEditor.value.contact-form'

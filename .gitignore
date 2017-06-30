@@ -3,7 +3,10 @@
 /Build/BuildEssentials
 /Build/Reports
 /Build/Resources
-/Configuration/
+/Configuration/PackageStates.php
+/Configuration/Production/*
+/Configuration/Testing/*
+/Configuration/Development/*
 /Data/
 !Packages
 /Packages/*

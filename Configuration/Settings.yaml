@@ -1,0 +1,15 @@
+Sitegeist:
+  NeosGuidelines:
+    packages:
+      packageKeys: ['Sitegeist.Phoenix']
+      validators:
+
+        NodeTypes:
+          options:
+            allowedNodeTypePrefixes: ['Content', 'Document', 'Mixin', 'Constraint', 'Collection', 'Override', 'Book']
+            abstractNodeTypePrefixes: ['Mixin', 'Constraint']
+
+        Fusion:
+          options:
+            excludedFileNames: ['Root.fusion', 'Shame.fusion']
+            allowedFusionPrefixes: ['Content', 'Document', 'Prototype', 'Component', 'Book']

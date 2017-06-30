@@ -1,0 +1,9 @@
+##
+# Sitegeist.Monocle subroutes
+
+-
+  name: 'Monocle'
+  uriPattern: 'sitegeist/monocle/<MonocleSubroutes>'
+  subRoutes:
+    'MonocleSubroutes':
+      package: 'Sitegeist.Monocle'

@@ -3,10 +3,10 @@
 @import "./forms.css";
 @import "./layout.css";
 @import "./typeplate.css";
-@import "../Fusion/Component/Molecle/Columns/columns.css";
-@import "../Fusion/Component/Molecle/Carousel/carousel.css";
-@import "../Fusion/Component/Molecle/Navigation/navigation.css";
-@import "../Fusion/Component/Molecle/Navigation/Breadcrumb/breadcrumb.css";
-@import "../Fusion/Component/Molecle/Navigation/Chapters/chapter-menu.css";
+@import "../Fusion/Component/Molecule/Columns/columns.css";
+@import "../Fusion/Component/Molecule/Carousel/carousel.css";
+@import "../Fusion/Component/Molecule/Navigation/navigation.css";
+@import "../Fusion/Component/Molecule/Navigation/Breadcrumb/breadcrumb.css";
+@import "../Fusion/Component/Molecule/Navigation/Chapters/chapter-menu.css";
 @import "../Fusion/Component/Atom/YouTube/youtube.css";
 @import "../Fusion/Component/Template/Chapter/chapter.css";

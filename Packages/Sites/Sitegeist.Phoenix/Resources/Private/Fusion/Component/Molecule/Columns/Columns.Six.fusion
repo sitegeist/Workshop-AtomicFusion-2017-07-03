@@ -11,7 +11,7 @@ prototype(Sitegeist.Phoenix:Component.Molecule.Columns.Six) < prototype(PackageF
 		}
 	}
 
-	layout = '3-3-3-3'
+	layout = '2-2-2-2-2-2'
 	column0 = ''
 	column1 = ''
 	column2 = ''

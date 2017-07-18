@@ -36,6 +36,10 @@ The following commands should get you a running local setup for develop.
 git clone https://github.com/sitegeist/Workshop-AtomicFusion-2017-07-03 afx-workshop
 cd afx-workshop
 composer install
+#
+# Edit Settings .yaml and add db-credentials
+# nano Configuration/Development/Settings.yaml
+#
 ./flow doctrine:migrate
 ./flow site:import --package-key Sitegeist.Phoenix
 ./flow user:create --roles Administrator admin password Admin User
